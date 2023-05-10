@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>chimeradownfall</groupId>
+    <artifactId>chimeradownfall</artifactId>
+    <version>v1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Chimeric Downfall</name>
+    <description>Some character-specific Chimera Modifiers for the Downfall characters.</description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
+        <Steam.path>D:\Prog\Steam\steamapps</Steam.path>
+        <stsPath>${Steam.path}/common/SlayTheSpire/</stsPath>
+        <workshopFolder>${Steam.path}/workshop/content/646570/</workshopFolder>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.megacrit.cardcrawl</groupId>
+            <artifactId>slaythespire</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${stsPath}desktop-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl</groupId>
+            <artifactId>ModTheSpire</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${workshopFolder}1605060445/ModTheSpire.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>basemod</groupId>
+            <artifactId>BaseMod</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${workshopFolder}1605833019/BaseMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>evilwithin</groupId>
+            <artifactId>EvilWithin</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${workshopFolder}1610056683/downfall.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>CardAugments</groupId>
+            <artifactId>CardAugments</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${workshopFolder}2970981743/CardAugments.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar" />
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
