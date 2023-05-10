@@ -1,0 +1,6 @@
+{
+    "chimeradownfall:HardHittingMod": {
+      "TEXT": ["Hard-Hitting ", "", "Applies #b2 #yBruise."],
+      "EXTRA_TEXT": [" NL Apply %d hermit:Bruise."]
+    }
+}

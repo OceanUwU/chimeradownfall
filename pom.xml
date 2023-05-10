@@ -16,6 +16,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <SlayTheSpire.version>12-22-2020</SlayTheSpire.version>
+        <ModTheSpire.version>3.23.4</ModTheSpire.version>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>D:\Prog\Steam\steamapps</Steam.path>
         <stsPath>${Steam.path}/common/SlayTheSpire/</stsPath>
@@ -26,35 +28,35 @@
         <dependency>
             <groupId>com.megacrit.cardcrawl</groupId>
             <artifactId>slaythespire</artifactId>
-            <version>1</version>
+            <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
             <systemPath>${stsPath}desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>ModTheSpire</artifactId>
-            <version>1</version>
+            <version>${ModTheSpire.version}</version>
             <scope>system</scope>
             <systemPath>${workshopFolder}1605060445/ModTheSpire.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>BaseMod</artifactId>
-            <version>1</version>
+            <version>5.41.0</version>
             <scope>system</scope>
             <systemPath>${workshopFolder}1605833019/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>evilwithin</groupId>
             <artifactId>EvilWithin</artifactId>
-            <version>1</version>
+            <version>4.1.14</version>
             <scope>system</scope>
             <systemPath>${workshopFolder}1610056683/downfall.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>CardAugments</groupId>
             <artifactId>CardAugments</artifactId>
-            <version>1</version>
+            <version>0.7.1</version>
             <scope>system</scope>
             <systemPath>${workshopFolder}2970981743/CardAugments.jar</systemPath>
         </dependency>
